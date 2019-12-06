@@ -3,9 +3,13 @@ def vol(rad):
     '''
     Write a function that computes the volume of a sphere given its radius.
     '''
-    pass
+    return (4/3) * 3.14 * (rad**3)
 
-vol(2)
+print()
+print('Problem 1')
+print('------------')
+print(vol(2))
+print()
 
 '''
 output:
@@ -14,9 +18,16 @@ output:
 
 # Problem 2
 def ran_check(num,low,high):
-    pass
-
-ran_check(5, 2, 7)
+    '''
+    Write a function that checks whether a number is in a given range (inclusive of high and low)
+    '''
+    if num > low and num < high:
+        return f'{num} is in the range between {low} and {high}'
+    return f'{num} is not in the range between {low} and {high}'
+print('Problem 2(a)')
+print('------------')
+print(ran_check(5, 2, 7))
+print()
 
 '''
 output:
@@ -28,9 +39,11 @@ def ran_bool(num,low,high):
     '''
     Write a function that checks whether a number is in a given range (inclusive of high and low)
     '''
-    pass
-
-ran_bool(3,1,10) # True
+    return num > low and num < high
+print('Problem 2(b)')
+print('------------')
+print(ran_bool(3,1,10))
+print()
 
 '''
 output: 
@@ -40,13 +53,22 @@ True
 # Problem 3
 def up_low(s):
     '''
-    Write a Python function that accepts astring and calculates the
+    Write a Python function that accepts a string and calculates the
     number of upper case letters and lower case letters.
     '''
-    pass
+    upr_lowr = {'up': 0, 'low': 0}
+    for letter in s:
+        if letter.isupper():
+            upr_lowr['up'] += 1
+        elif letter.islower():
+            upr_lowr['low'] += 1
+    return f'No. of Upper case characters : {upr_lowr["up"]}\nNo. of Lower case characters : {upr_lowr["low"]}'
 
+print('Problem 3')
+print('------------')
 s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
-up_low(s)
+print(up_low(s))
+print()
 
 '''
 output:
@@ -61,9 +83,12 @@ def unique_list(lst):
     Write a Python function that takes a list and returns a new list
     with unique elements of the first list.
     '''
-    pass
+    return list(set(lst))
 
-unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
+print('Problem 4')
+print('------------')
+print(unique_list([1,1,1,1,2,2,3,3,3,3,4,5]))
+print()
 
 '''
 output:
@@ -75,9 +100,15 @@ def multiply(numbers):
     '''
     Write a Python function to multiply all the numbers in a list.
     ''' 
-    pass
+    total = 1
+    for num in numbers:
+        total *= num
+    return total
 
-multiply([1,2,3,-4])
+print('Problem 5')
+print('------------')
+print(multiply([1,2,3,-4]))
+print()
 
 '''
 output:
@@ -90,9 +121,12 @@ def palindrome(s):
     '''
     Write a Python function that checks whether a passed in string is palindrome or not.
     '''
-    pass
+    return s == s[::-1]
 
-palindrome('helleh')
+print('Problem 6')
+print('------------')
+print(palindrome('helleh'))
+print()
 
 '''
 output:
@@ -107,9 +141,12 @@ def ispangram(str1, alphabet=string.ascii_lowercase):
     '''
     Write a Python function to check whether a string is pangram or not.
     '''
-    pass
+    return set(alphabet) <= set(str1.lower())
 
-ispangram("The quick brown fox jumps over the lazy dog")
+print('Problem 7')
+print('------------')
+print(ispangram("The quick brown fox jumps over the lazy dog"))
+print()
 
 '''
 output:
